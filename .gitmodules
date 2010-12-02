@@ -1,0 +1,6 @@
+[submodule "_vim/bundle/pathogen"]
+	path = _vim/bundle/pathogen
+	url = git://github.com/vim-scripts/pathogen.vim.git
+[submodule "_vim/bundle/supertab"]
+	path = _vim/bundle/supertab
+	url = git://github.com/vim-scripts/SuperTab-continued..git

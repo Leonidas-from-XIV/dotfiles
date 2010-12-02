@@ -5,6 +5,9 @@
 " deactivate vi compatibility, make usable
 set nocompatible
 
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 " show command line in normal mode
 set showcmd
 " brace highlighting
