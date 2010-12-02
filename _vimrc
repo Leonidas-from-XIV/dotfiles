@@ -5,6 +5,7 @@
 " deactivate vi compatibility, make usable
 set nocompatible
 
+" enable the pathogen plugin so it can mangle paths and such
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
@@ -107,3 +108,7 @@ nmap <C-Down> ]e
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
+
+" auto-reload .vimrc & _vimrc after editing
+" http://vimcasts.org/episodes/updating-your-vimrc-file-on-the-fly/
+autocmd BufWritePost .vimrc,_vimrc source $MYVIMRC
