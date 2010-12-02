@@ -43,7 +43,7 @@ syntax match trailingSpace "\s\+$" display
 " highlight it in Python files (python.vim overrides the previous declaration)
 autocmd FileType python syntax match trailingSpace "\s\+$" display
 " enable rainbow parens
-autocmd FileType scheme source ~/.vim/plugin/RainbowParenthesis.vim
+autocmd FileType scheme source ~/.vim/bundle/rainbow-parenthesis/syntax/RainbowParenthsis.vim
 " set the paren color to something different than black on black background
 autocmd FileType scheme hi level10c ctermfg=darkgreen
 
