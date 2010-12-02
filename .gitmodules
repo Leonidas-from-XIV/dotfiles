@@ -16,3 +16,6 @@
 [submodule "_vim/bundle/unimpaired"]
 	path = _vim/bundle/unimpaired
 	url = git://github.com/vim-scripts/unimpaired.vim.git
+[submodule "_vim/bundle/surround"]
+	path = _vim/bundle/surround
+	url = git://github.com/vim-scripts/surround.vim.git
