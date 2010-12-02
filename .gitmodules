@@ -13,3 +13,6 @@
 [submodule "_vim/bundle/snipmate"]
 	path = _vim/bundle/snipmate
 	url = git://github.com/vim-scripts/snipMate.git
+[submodule "_vim/bundle/unimpaired"]
+	path = _vim/bundle/unimpaired
+	url = git://github.com/vim-scripts/unimpaired.vim.git
