@@ -10,3 +10,6 @@
 [submodule "_vim/bundle/yankring"]
 	path = _vim/bundle/yankring
 	url = git://github.com/vim-scripts/YankRing.vim
+[submodule "_vim/bundle/snipmate"]
+	path = _vim/bundle/snipmate
+	url = git://github.com/vim-scripts/snipMate.git
