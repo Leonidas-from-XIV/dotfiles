@@ -1,21 +1,21 @@
-[submodule "_vim/bundle/pathogen"]
-	path = _vim/bundle/pathogen
+[submodule "home/.vim/bundle/pathogen"]
+	path = home/.vim/bundle/pathogen
 	url = git://github.com/vim-scripts/pathogen.vim.git
-[submodule "_vim/bundle/supertab"]
-	path = _vim/bundle/supertab
+[submodule "home/.vim/bundle/supertab"]
+	path = home/.vim/bundle/supertab
 	url = git://github.com/vim-scripts/SuperTab-continued..git
-[submodule "_vim/bundle/rainbow-parenthesis"]
-	path = _vim/bundle/rainbow-parenthesis
+[submodule "home/.vim/bundle/rainbow-parenthesis"]
+	path = home/.vim/bundle/rainbow-parenthesis
 	url = git://github.com/vim-scripts/Rainbow-Parenthesis.git
-[submodule "_vim/bundle/yankring"]
-	path = _vim/bundle/yankring
+[submodule "home/.vim/bundle/yankring"]
+	path = home/.vim/bundle/yankring
 	url = git://github.com/vim-scripts/YankRing.vim
-[submodule "_vim/bundle/snipmate"]
-	path = _vim/bundle/snipmate
+[submodule "home/.vim/bundle/snipmate"]
+	path = home/.vim/bundle/snipmate
 	url = git://github.com/vim-scripts/snipMate.git
-[submodule "_vim/bundle/unimpaired"]
-	path = _vim/bundle/unimpaired
+[submodule "home/.vim/bundle/unimpaired"]
+	path = home/.vim/bundle/unimpaired
 	url = git://github.com/vim-scripts/unimpaired.vim.git
-[submodule "_vim/bundle/surround"]
-	path = _vim/bundle/surround
+[submodule "home/.vim/bundle/surround"]
+	path = home/.vim/bundle/surround
 	url = git://github.com/vim-scripts/surround.vim.git
