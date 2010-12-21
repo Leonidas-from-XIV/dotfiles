@@ -19,3 +19,6 @@
 [submodule "home/.vim/bundle/surround"]
 	path = home/.vim/bundle/surround
 	url = git://github.com/vim-scripts/surround.vim.git
+[submodule "home/.vim/bundle/vimclojure"]
+	path = home/.vim/bundle/vimclojure
+	url = git://github.com/vim-scripts/VimClojure.git
