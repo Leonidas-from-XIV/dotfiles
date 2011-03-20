@@ -112,3 +112,9 @@ vmap <C-Down> ]egv
 " auto-reload .vimrc & _vimrc after editing
 " http://vimcasts.org/episodes/updating-your-vimrc-file-on-the-fly/
 autocmd BufWritePost .vimrc,_vimrc source $MYVIMRC
+
+" VimClojure stuff
+" this is default but what the heck...
+let vimclojure#HighlightBuiltins = 1
+" VimClojure supports parens
+let vimclojure#ParenRainbow = 1
