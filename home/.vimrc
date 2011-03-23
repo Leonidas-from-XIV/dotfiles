@@ -19,6 +19,10 @@ set wildmenu
 " get rid of cindent (crappy for mails)
 set nocindent
 
+" define <leader> to something more sane than the default backslash
+let mapleader = ","
+let maplocalleader = ";"
+
 " automatically jump into the last line that was edited
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
@@ -30,6 +34,11 @@ autocmd FileType c setlocal shiftwidth=4 expandtab softtabstop=4
 
 " settings for CoffeeScript
 autocmd FileType coffee setlocal expandtab shiftwidth=2 softtabstop=2
+
+" Use ,c to compile selected text to corresponding output and print it to stdout
+" Thanks to https://github.com/epeli/vimconfig/blob/master/vimrc
+" CoffeeScript to Javascript
+autocmd FileType coffee vmap <leader>c <esc>:'<,'>:w !coffee -scb<CR>
 
 " comments
 set fo=croq
