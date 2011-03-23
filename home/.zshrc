@@ -4,6 +4,7 @@ autoload -Uz promptinit
 promptinit
 prompt walters
 
+export EDITOR=vim
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
@@ -15,6 +16,9 @@ HISTFILE=~/.zsh_history
 # Use modern completion system
 autoload -Uz compinit
 compinit
+
+# enable colors
+autoload -U colors && colors
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
