@@ -28,6 +28,9 @@ autocmd FileType python setlocal tags+=$HOME/tags/python.ctags
 
 autocmd FileType c setlocal shiftwidth=4 expandtab softtabstop=4
 
+" settings for CoffeeScript
+autocmd FileType coffee setlocal expandtab shiftwidth=2 softtabstop=2
+
 " comments
 set fo=croq
 
