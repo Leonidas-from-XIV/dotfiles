@@ -13,6 +13,14 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+# https://wiki.archlinux.org/index.php/Home_and_End_keys_not_working#Zsh
+# gnome-terminal doing strange stuff
+bindkey "^[OH" beginning-of-line
+bindkey "^[OF" end-of-line
+# the normal bindings, just for reference
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
