@@ -1,13 +1,18 @@
 " .vimrc by Leonidas
-" this .vimrc is used for vim 7.0 and up, it is optimized for the text mode
-" vim editor. It is used mostly to edit Python files and some HTML.
 
-" deactivate vi compatibility, make usable
-set nocompatible
+"https://github.com/DasIch/dotfiles/blob/master/vim/vimrc
+"syntax off
+"filetype off
+"filetype plugin off
+"filetype indent off
 
 " enable the pathogen plugin so it can mangle paths and such
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+"filetype plugin on
+
+" deactivate vi compatibility, make usable
+set nocompatible
 
 " show command line in normal mode
 set showcmd
@@ -38,7 +43,8 @@ autocmd FileType coffee setlocal expandtab shiftwidth=2 softtabstop=2
 " Use ,c to compile selected text to corresponding output and print it to stdout
 " Thanks to https://github.com/epeli/vimconfig/blob/master/vimrc
 " CoffeeScript to Javascript
-autocmd FileType coffee vmap <leader>c <esc>:'<,'>:w !coffee -scb \| pygmentize2 -l javascript<CR>
+"autocmd FileType coffee vmap <leader>c <esc>:'<,'>:w !coffee -scb \| pygmentize2 -l javascript<CR>
+autocmd FileType coffee vmap <leader>c <esc>:CoffeeCompile<CR>
 
 " comments
 set fo=croq
