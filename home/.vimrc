@@ -35,9 +35,8 @@ autocmd FileType coffee setlocal expandtab shiftwidth=2 softtabstop=2
 
 " Use ,c to compile selected text to corresponding output and print it to stdout
 " Thanks to https://github.com/epeli/vimconfig/blob/master/vimrc
-" CoffeeScript to Javascript
-"autocmd FileType coffee vmap <leader>c <esc>:'<,'>:w !coffee -scb \| pygmentize2 -l javascript<CR>
-autocmd FileType coffee vmap <leader>c <esc>:CoffeeCompile<CR>
+" CoffeeScript to Javascript (requires vim-coffee-script plugin)
+autocmd FileType coffee vmap <leader>c <esc>:'<,'>CoffeeCompile<CR>
 
 " comments
 set fo=croq
