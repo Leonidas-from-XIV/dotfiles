@@ -1,15 +1,8 @@
 " .vimrc by Leonidas
 
-"https://github.com/DasIch/dotfiles/blob/master/vim/vimrc
-"syntax off
-"filetype off
-"filetype plugin off
-"filetype indent off
-
 " enable the pathogen plugin so it can mangle paths and such
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-"filetype plugin on
 
 " deactivate vi compatibility, make usable
 set nocompatible
