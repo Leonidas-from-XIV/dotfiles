@@ -17,6 +17,11 @@ set wildmenu
 " get rid of cindent (crappy for mails)
 set nocindent
 
+" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+" needs +clipboard / +xterm_clipboard
+" (in Arch you need the gvim package even with console vim)
+set clipboard=unnamedplus
+
 " define <leader> to something more sane than the default backslash
 let mapleader = ","
 let maplocalleader = ";"
