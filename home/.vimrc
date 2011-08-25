@@ -13,6 +13,7 @@ set showcmd
 set showmatch
 " activate wildmenu - this is definitely useful for switching between files
 set wildmenu
+set wildignore=*.dll,*.o,*.pyc,*.pyo,*.bak,*.swp,*.exe,*.jpg,*.jpeg,*.png,*.gif
 
 " get rid of cindent (crappy for mails)
 set nocindent
