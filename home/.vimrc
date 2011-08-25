@@ -82,6 +82,8 @@ endfun
 
 autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 
+inoremap </ <C-R>=GetCloseTag()<CR>
+
 " file browser
 " hide some files
 let g:explHideFiles='^\.,.*\.sw[po]$,.*\.pyc$'
