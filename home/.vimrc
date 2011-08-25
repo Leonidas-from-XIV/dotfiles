@@ -82,6 +82,9 @@ endfun
 
 autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 
+" Closetag plugin
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 inoremap </ <C-R>=GetCloseTag()<CR>
 
 " file browser
