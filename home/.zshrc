@@ -60,6 +60,10 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 
+# internet radio
+alias somafm='read "?Which station: " && mplayer -quiet -playlist http://somafm.com/startstream=${REPLY}.pls'
+alias di='read "?Which station: " && mplayer -quiet -playlist http://listen.di.fm/public3/${REPLY}.pls'
+
 # https://wiki.archlinux.org/index.php/Home_and_End_keys_not_working#Zsh
 # gnome-terminal doing strange stuff
 bindkey "^[OH" beginning-of-line
