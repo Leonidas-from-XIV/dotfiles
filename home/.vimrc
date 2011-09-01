@@ -13,9 +13,7 @@ set showcmd
 set showmatch
 " activate wildmenu - this is definitely useful for switching between files
 set wildmenu
-
-" get rid of cindent (crappy for mails)
-set nocindent
+set wildignore=*.dll,*.o,*.pyc,*.pyo,*.bak,*.swp,*.exe,*.jpg,*.jpeg,*.png,*.gif
 
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 " needs +clipboard / +xterm_clipboard
@@ -29,9 +27,28 @@ let maplocalleader = ";"
 " automatically jump into the last line that was edited
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
+" syntax highlighting
+syntax on
+filetype indent on
+filetype plugin on
+colorscheme elflord
+
+" get rid of cindent (crappy for mails)
+set nocindent
+" enable smart indentation
+set smartindent
+" " deactivate it for hashes
+inoremap # #
+
+" general tab settings
+set smarttab
+set tabstop=8
+
 " settings for Python files
 autocmd FileType python setlocal cindent expandtab shiftwidth=4 tabstop=8 softtabstop=4
 autocmd FileType python setlocal tags+=$HOME/tags/python.ctags
+" http://www.vex.net/~x/python_and_vim.html
+autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 autocmd FileType c setlocal shiftwidth=4 expandtab softtabstop=4
 
@@ -55,34 +72,42 @@ filetype plugin on
 colorscheme solarized
 
 " highlight useless trailing whitespace
-highlight trailingSpace ctermbg=Red
+"highlight trailingSpace ctermbg=Red
 " highlight it in all files
-syntax match trailingSpace "\s\+$" display
+"syntax match trailingSpace "\s\+$" display
 " highlight it in Python files (python.vim overrides the previous declaration)
-autocmd FileType python syntax match trailingSpace "\s\+$" display
+"autocmd FileType python syntax match trailingSpace "\s\+$" display
+
+
+highlight UnwantedSpaces ctermbg=red guibg=red
+match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
+
 " enable rainbow parens
 autocmd FileType scheme source ~/.vim/bundle/rainbow-parenthesis/syntax/RainbowParenthsis.vim
 " set the paren color to something different than black on black background
 autocmd FileType scheme hi level10c ctermfg=darkgreen
 
-" http://www.vex.net/~x/python_and_vim.html
-set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 " improve recognition of Django templates
-fun! s:SelectHTML()
-  let n = 1
-  while n < 50 && n < line("$")
-    " check for django
-    if getline(n) =~ '{%\s*\(extends\|block\|comment\|ssi\|if\|for\|blocktrans\)\>'
-      set ft=htmldjango
-      return
-    endif
-    let n = n + 1
-  endwhile
-  set ft=html
-endfun
+"fun! s:SelectHTML()
+"  let n = 1
+"  while n < 50 && n < line("$")
+"    " check for django
+"    if getline(n) =~ '{%\s*\(extends\|block\|comment\|ssi\|if\|for\|blocktrans\)\>'
+"      set ft=htmldjango
+"      return
+"    endif
+"    let n = n + 1
+"  endwhile
+"  set ft=html
+"endfun
 
-autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
+"autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
+
+" Closetag plugin
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+inoremap </ <C-R>=GetCloseTag()<CR>
 
 " file browser
 " hide some files

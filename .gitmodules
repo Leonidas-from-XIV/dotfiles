@@ -31,3 +31,9 @@
 [submodule "home/.vim/bundle/solarized"]
 	path = home/.vim/bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "home/.vim/bundle/closetag"]
+	path = home/.vim/bundle/closetag
+	url = git://github.com/vim-scripts/closetag.vim.git
+[submodule "home/.vim/bundle/delimitmate"]
+	path = home/.vim/bundle/delimitmate
+	url = git://github.com/Raimondi/delimitMate.git
