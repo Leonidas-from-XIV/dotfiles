@@ -47,10 +47,12 @@ autocmd FileType coffee vmap <leader>c <esc>:'<,'>CoffeeCompile<CR>
 set fo=croq
 
 " syntax highlighting
-syntax on
+syntax enable
+set t_Co=256
+set background=dark
 filetype indent on
 filetype plugin on
-colorscheme elflord
+colorscheme solarized
 
 " highlight useless trailing whitespace
 highlight trailingSpace ctermbg=Red
