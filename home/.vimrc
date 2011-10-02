@@ -27,6 +27,10 @@ let maplocalleader = ";"
 " default tab maximum is 10, srsly?
 set tabpagemax=100
 
+" I can't stand these stupid swapfiles, just disable them. they're not
+" helpful anyway
+set noswapfile
+
 " automatically jump into the last line that was edited
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
