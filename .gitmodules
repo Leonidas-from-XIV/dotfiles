@@ -19,9 +19,6 @@
 [submodule "home/.vim/bundle/vimclojure"]
 	path = home/.vim/bundle/vimclojure
 	url = git://github.com/vim-scripts/VimClojure.git
-[submodule "home/.vim/bundle/vala"]
-	path = home/.vim/bundle/vala
-	url = git://github.com/DasIch/vim-vala.git
 [submodule "home/.vim/bundle/pathogen"]
 	path = home/.vim/bundle/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
