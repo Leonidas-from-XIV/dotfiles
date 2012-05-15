@@ -42,8 +42,8 @@ colorscheme elflord
 
 " get rid of cindent (crappy for mails)
 set nocindent
-" enable smart indentation
-set smartindent
+" smartindent tends to break plain text just as well
+set nosmartindent
 " " deactivate it for hashes
 inoremap # #
 
