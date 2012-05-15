@@ -57,13 +57,15 @@ alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
 alias rm='nocorrect rm'
 # prefix with space to exclude from history (hist_ignore_space)
-alias ls=' ls'
 alias cd=' cd'
 
 # colors
-alias ls='ls --color=auto'
+alias ls=' ls --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
+
+# use ack for ack or ack-grep 
+which ack-grep &>> /dev/null && alias ack='ack-grep'
 
 # internet radio
 alias somafm='read "?Which station: " && mplayer -quiet -playlist http://somafm.com/startstream=${REPLY}.pls'
