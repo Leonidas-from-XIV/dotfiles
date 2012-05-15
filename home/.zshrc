@@ -76,6 +76,10 @@ bindkey "^[OF" end-of-line
 # the normal bindings, just for reference
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+# also, unbreak the delete key:
+# http://pilif.github.com/2004/10/delete-key-in-zsh/
+bindkey "^[[3~" delete-char
+bindkey "^[3;5~" delete-char
 
 # enable searching history with globs:
 bindkey "^R" history-incremental-pattern-search-backward
