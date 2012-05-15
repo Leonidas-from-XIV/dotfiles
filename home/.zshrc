@@ -40,6 +40,8 @@ setopt share_history
 setopt extended_history
 # ignore duplicates
 setopt hist_ignore_all_dups hist_save_no_dups hist_find_no_dups
+# ignore all commands in history if they start with a space
+setopt hist_ignore_space
 # strip meaningless blanks from history entries
 setopt hist_reduce_blanks
 # don't store history commands
@@ -54,6 +56,9 @@ alias cp='nocorrect cp'
 alias mkdir='nocorrect mkdir'
 alias mv='nocorrect mv'
 alias rm='nocorrect rm'
+# prefix with space to exclude from history (hist_ignore_space)
+alias ls=' ls'
+alias cd=' cd'
 
 # colors
 alias ls='ls --color=auto'
@@ -71,6 +76,25 @@ bindkey "^[OF" end-of-line
 # the normal bindings, just for reference
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+
+# enable searching history with globs:
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^S" history-incremental-pattern-search-forward
+
+# make ^Z in shell resume last suspended process
+foreground-last() {
+  fg %
+}
+zle -N foreground-last
+bindkey "^Z" foreground-last
+
+# easy way to look up ZSH documentation
+zman() {
+  PAGER="less -g -s '+/^       "$1"'" man zshall
+}
+
+# more stuff? check this:
+# http://chneukirchen.org/blog/archive/2008/02/10-zsh-tricks-you-may-not-know.html
 
 # Use modern completion system
 autoload -Uz compinit
