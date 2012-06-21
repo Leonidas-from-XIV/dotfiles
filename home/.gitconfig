@@ -12,3 +12,6 @@
 	history-view-vpane-position = 392
 	main-window-view = HistoryView
 	file-view-vpane-position = 577
+[alias]
+	lol = log --graph --decorate --oneline
+	lola = log --graph --decorate --oneline --all
