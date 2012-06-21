@@ -15,3 +15,6 @@
 [alias]
 	lol = log --graph --decorate --oneline
 	lola = log --graph --decorate --oneline --all
+	cat = -p cat-file -p
+[url "git@github.com:Leonidas-from-XIV/"]
+	insteadOf = github:
