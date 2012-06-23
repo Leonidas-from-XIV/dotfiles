@@ -109,6 +109,9 @@ compinit
 # enable colors
 autoload -U colors && colors
 
+# complete mosh exactly like SSH
+compdef mosh=ssh
+
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
