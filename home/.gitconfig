@@ -18,3 +18,5 @@
 	cat = -p cat-file -p
 [url "git@github.com:Leonidas-from-XIV/"]
 	insteadOf = github:
+[push]
+	default = simple
