@@ -31,6 +31,17 @@ set tabpagemax=100
 " helpful anyway
 set noswapfile
 
+" disable tear-off menus in gvim - rule of ugly!
+set guioptions-=t
+" also, don't waste space on toolbar
+set guioptions-=T
+
+" some sane font for the GUI with fallbacks:
+" Droid Sans Mono (Dotted if available)
+" DejaVu Sans Mono
+" whatever Monospace you got
+set guifont=Droid\ Sans\ Mono\ Dotted\ 11,Droid\ Sans\ Mono\ 11,DejaVu\ Sans\ Mono\ 11,Monospace\ 11
+
 " automatically jump into the last line that was edited
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
