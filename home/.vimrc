@@ -72,6 +72,8 @@ autocmd FileType coffee setlocal expandtab shiftwidth=2 softtabstop=2
 " CoffeeScript to Javascript (requires vim-coffee-script plugin)
 autocmd FileType coffee vmap <leader>c <esc>:'<,'>CoffeeCompile<CR>
 
+autocmd FileType ruby setlocal shiftwidth=2 expandtab softtabstop=2
+
 " comments
 set fo=croq
 
