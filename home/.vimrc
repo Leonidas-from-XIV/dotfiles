@@ -45,12 +45,6 @@ set guifont=Droid\ Sans\ Mono\ Dotted\ 11,Droid\ Sans\ Mono\ 11,DejaVu\ Sans\ Mo
 " automatically jump into the last line that was edited
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
-" syntax highlighting
-syntax on
-filetype indent on
-filetype plugin on
-colorscheme elflord
-
 " get rid of cindent (crappy for mails)
 set nocindent
 " smartindent tends to break plain text just as well
