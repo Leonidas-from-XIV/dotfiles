@@ -5,6 +5,14 @@ promptinit
 prompt walters
 
 export EDITOR=vim
+
+# Fedora might have vimx, fix the mess
+if [ -e /usr/bin/vimx ]
+then
+  alias vim=vimx
+  export EDITOR=vimx
+fi
+
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
@@ -64,7 +72,7 @@ alias ls=' ls --color=auto'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 
-# use ack for ack or ack-grep 
+# use ack for ack or ack-grep
 which ack-grep &>> /dev/null && alias ack='ack-grep'
 
 # internet radio
