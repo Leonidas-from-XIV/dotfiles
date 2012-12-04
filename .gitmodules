@@ -34,3 +34,6 @@
 [submodule "home/.vim/bundle/delimitmate"]
 	path = home/.vim/bundle/delimitmate
 	url = git://github.com/Raimondi/delimitMate.git
+[submodule "home/.vim/bundle/markdown"]
+	path = home/.vim/bundle/markdown
+	url = git://github.com/tpope/vim-markdown.git
