@@ -20,3 +20,5 @@
 	insteadOf = github:
 [push]
 	default = simple
+[github]
+	user = Leonidas-from-XIV

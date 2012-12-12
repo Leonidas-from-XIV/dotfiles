@@ -40,3 +40,9 @@
 [submodule "home/.vim/bundle/io"]
 	path = home/.vim/bundle/io
 	url = git://github.com/xhr/vim-io.git
+[submodule "home/.vim/bundle/webapi"]
+	path = home/.vim/bundle/webapi
+	url = git://github.com/mattn/webapi-vim.git
+[submodule "home/.vim/bundle/gist"]
+	path = home/.vim/bundle/gist
+	url = git://github.com/mattn/gist-vim.git
