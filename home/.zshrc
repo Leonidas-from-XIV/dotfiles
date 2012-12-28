@@ -13,6 +13,13 @@ then
   export EDITOR=vimx
 fi
 
+OPAM_LOCATION=~/ocaml/bin
+if [ -d $OPAM_LOCATION ]
+then
+  PATH=$OPAM_LOCATION:$PATH
+  (( $+commands[opam] )) && eval `opam config -env`
+fi
+
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
