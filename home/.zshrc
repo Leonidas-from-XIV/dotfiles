@@ -7,7 +7,7 @@ prompt walters
 export EDITOR=vim
 
 # Fedora might have vimx, fix the mess
-if [ -e /usr/bin/vimx ]
+if (( $+commands[vimx] ))
 then
   alias vim=vimx
   export EDITOR=vimx
@@ -80,7 +80,7 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 
 # use ack for ack or ack-grep
-which ack-grep &>> /dev/null && alias ack='ack-grep'
+(( $+commands[ack-grep] )) && alias ack='ack-grep'
 
 # internet radio
 alias somafm='read "?Which station: " && mplayer -quiet -playlist http://somafm.com/startstream=${REPLY}.pls'
