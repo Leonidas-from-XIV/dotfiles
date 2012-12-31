@@ -74,6 +74,10 @@ autocmd FileType coffee vmap <leader>c <esc>:'<,'>CoffeeCompile<CR>
 
 autocmd FileType ruby setlocal shiftwidth=2 expandtab softtabstop=2
 
+" \\\ does comments courtesy of vim-commentary, but does not support OCaml
+" OOTB, define this stuff
+autocmd FileType ocaml setlocal commentstring=(*%s*)
+
 " comments
 set fo=croq
 
