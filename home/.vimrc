@@ -78,6 +78,9 @@ autocmd FileType ruby setlocal shiftwidth=2 expandtab softtabstop=2
 " OOTB, define this stuff
 autocmd FileType ocaml setlocal commentstring=(*%s*)
 
+" map ,g to Gist: '<,'>Gist
+vmap <leader>g <esc>:'<,'>Gist<CR>
+
 " comments
 set fo=croq
 
