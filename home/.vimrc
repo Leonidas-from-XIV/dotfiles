@@ -80,6 +80,8 @@ autocmd FileType ocaml setlocal commentstring=(*%s*)
 
 " exclude single quotes from delimitMate in Clojure code
 autocmd FileType clojure let b:delimitMate_quotes = "\""
+" enable .clj for Clojure, no idea why it doesn't work
+autocmd BufNewFile,BufRead *.clj set filetype=clojure
 
 " map ,g to Gist: '<,'>Gist
 vmap <leader>g <esc>:'<,'>Gist<CR>
