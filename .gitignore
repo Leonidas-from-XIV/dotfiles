@@ -1,3 +1,8 @@
 .netrwhist
 tags
 *.swp
+*.gpg
+*.gpg~
+*.gpg.lock
+*.kbx
+random_seed
