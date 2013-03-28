@@ -76,7 +76,7 @@ autocmd FileType ruby setlocal shiftwidth=2 expandtab softtabstop=2
 
 " \\\ does comments courtesy of vim-commentary, but does not support OCaml
 " OOTB, define this stuff
-autocmd FileType ocaml setlocal commentstring=(*%s*)
+autocmd FileType ocaml setlocal commentstring=(*%s*) shiftwidth=2
 
 " exclude single quotes from delimitMate in Clojure code
 autocmd FileType clojure let b:delimitMate_quotes = "\""
