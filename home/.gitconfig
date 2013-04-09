@@ -16,6 +16,9 @@
 	lol = log --graph --decorate --oneline
 	lola = log --graph --decorate --oneline --all
 	cat = -p cat-file -p
+	assume   = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
 [url "git@github.com:Leonidas-from-XIV/"]
 	insteadOf = github:
 [push]
