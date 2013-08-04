@@ -1,6 +1,7 @@
 [user]
 	name = Marek Kubica
 	email = marek@xivilization.net
+	signingkey = 575982D187A6E2C5
 [color]
 	branch = auto
 	diff = auto
