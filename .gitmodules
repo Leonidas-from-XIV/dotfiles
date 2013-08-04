@@ -49,3 +49,7 @@
 [submodule "home/.rbenv"]
 	path = home/.rbenv
 	url = git://github.com/sstephenson/rbenv.git
+[submodule "home/.vim/bundle/coffee-script"]
+	path = home/.vim/bundle/coffee-script
+	url = git://github.com/Leonidas-from-XIV/vim-coffee-script.git
+	branch = feature/remove-generated-by
