@@ -103,11 +103,24 @@ bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
 # make ^Z in shell resume last suspended process
-foreground-last() {
-  fg %
+#foreground-last() {
+#  fg %
+#}
+#zle -N foreground-last
+#bindkey "^Z" foreground-last
+
+fancy-ctrl-z () {
+  emulate -LR zsh
+  if [[ $#BUFFER -eq 0 ]]; then
+    fg
+    zle redisplay
+  else
+    zle push-input
+  fi
 }
-zle -N foreground-last
-bindkey "^Z" foreground-last
+zle -N fancy-ctrl-z
+bindkey "^Z" fancy-ctrl-z
+
 
 # easy way to look up ZSH documentation
 zman() {
