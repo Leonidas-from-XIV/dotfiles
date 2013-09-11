@@ -1,9 +1,6 @@
 [submodule "home/.vim/bundle/supertab"]
 	path = home/.vim/bundle/supertab
 	url = git://github.com/vim-scripts/SuperTab-continued..git
-[submodule "home/.vim/bundle/rainbow-parenthesis"]
-	path = home/.vim/bundle/rainbow-parenthesis
-	url = git://github.com/vim-scripts/Rainbow-Parenthesis.git
 [submodule "home/.vim/bundle/yankring"]
 	path = home/.vim/bundle/yankring
 	url = git://github.com/vim-scripts/YankRing.vim
