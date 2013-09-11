@@ -88,7 +88,7 @@ autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
 
 " fireplace alias: connect to locally running nREPL at 33033
-autocmd FileType clojure command! Nrepl Connect nrepl://localhost:33033
+autocmd FileType clojure command! -buffer Repl Connect nrepl://localhost:33033
 
 " map ,g to Gist: '<,'>Gist
 vmap <leader>g <esc>:'<,'>Gist<CR>
