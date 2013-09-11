@@ -86,6 +86,9 @@ alias egrep='egrep --color=auto'
 alias somafm='read "?Which station: " && mplayer -quiet -playlist http://somafm.com/startstream=${REPLY}.pls'
 alias di='read "?Which station: " && mplayer -quiet -playlist http://listen.di.fm/public3/${REPLY}.pls'
 
+# Clojure standalone nREPL on port 33033 (see related .vimrc)
+alias nrepl='lein repl :start :port 33033'
+
 # https://wiki.archlinux.org/index.php/Home_and_End_keys_not_working#Zsh
 # gnome-terminal doing strange stuff
 bindkey "^[OH" beginning-of-line
