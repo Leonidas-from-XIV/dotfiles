@@ -50,3 +50,6 @@
 [submodule "home/.vim/bundle/rainbow-parentheses"]
 	path = home/.vim/bundle/rainbow-parentheses
 	url = git@github.com:kien/rainbow_parentheses.vim.git
+[submodule "home/.vim/bundle/fireplace"]
+	path = home/.vim/bundle/fireplace
+	url = git@github.com:tpope/vim-fireplace.git
