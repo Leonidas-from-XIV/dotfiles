@@ -47,3 +47,6 @@
 	path = home/.vim/bundle/coffee-script
 	url = git://github.com/Leonidas-from-XIV/vim-coffee-script.git
 	branch = feature/remove-generated-by
+[submodule "home/.vim/bundle/rainbow-parentheses"]
+	path = home/.vim/bundle/rainbow-parentheses
+	url = git@github.com:kien/rainbow_parentheses.vim.git

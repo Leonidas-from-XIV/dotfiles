@@ -80,8 +80,12 @@ autocmd FileType ocaml setlocal commentstring=(*%s*) shiftwidth=2
 
 " exclude single quotes from delimitMate in Clojure code
 autocmd FileType clojure let b:delimitMate_quotes = "\""
-" enable .clj for Clojure, no idea why it doesn't work
-autocmd BufNewFile,BufRead *.clj setlocal filetype=clojure
+
+" enable rainbow parens
+autocmd VimEnter * RainbowParenthesesToggleAll
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
 
 " map ,g to Gist: '<,'>Gist
 vmap <leader>g <esc>:'<,'>Gist<CR>
@@ -107,12 +111,6 @@ colorscheme solarized
 
 highlight UnwantedSpaces ctermbg=red guibg=red
 match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
-
-" enable rainbow parens
-autocmd FileType scheme source ~/.vim/bundle/rainbow-parenthesis/syntax/RainbowParenthsis.vim
-" set the paren color to something different than black on black background
-autocmd FileType scheme hi level10c ctermfg=darkgreen
-
 
 " improve recognition of Django templates
 "fun! s:SelectHTML()
@@ -180,9 +178,3 @@ vmap <C-Down> ]egv
 " auto-reload .vimrc & _vimrc after editing
 " http://vimcasts.org/episodes/updating-your-vimrc-file-on-the-fly/
 autocmd BufWritePost .vimrc,_vimrc source $MYVIMRC
-
-" VimClojure stuff
-" this is default but what the heck...
-let vimclojure#HighlightBuiltins = 1
-" VimClojure supports parens
-let vimclojure#ParenRainbow = 1
