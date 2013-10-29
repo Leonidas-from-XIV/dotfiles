@@ -52,16 +52,22 @@ set nosmartindent
 " " deactivate it for hashes
 inoremap # #
 
-" general tab settings
-set smarttab
-set tabstop=8
+" pthon-mode uses folding but I don't like the fact that it is folded by
+" default, so I immediately unfold it. Folding manually still works if
+" required
+autocmd FileType python silent! %foldopen!
+" Or just disable it
+"let g:pymode_folding = 0
+" Access the docs via ,d over an identifier
+let g:pymode_doc_key = '<leader>d'
+" goto definition of identifier with ,g
+autocmd FileType python nmap <leader>g <esc>:RopeGotoDefinition<CR>
+" not super-useful because very slow but finds all occurences
+autocmd FileType python nmap <leader>f <esc>:RopeFindOccurrences<CR>
+" I dislike line numbers but like the other python-mode options
+autocmd FileType python setlocal nonumber
 
-" settings for Python files
-autocmd FileType python setlocal cindent expandtab shiftwidth=4 tabstop=8 softtabstop=4
-autocmd FileType python setlocal tags+=$HOME/tags/python.ctags
-" http://www.vex.net/~x/python_and_vim.html
-autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-
+" some useful settings for C
 autocmd FileType c setlocal shiftwidth=4 expandtab softtabstop=4
 
 " settings for CoffeeScript

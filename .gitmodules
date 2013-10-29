@@ -53,3 +53,6 @@
 [submodule "home/.vim/bundle/fireplace"]
 	path = home/.vim/bundle/fireplace
 	url = git://github.com/tpope/vim-fireplace.git
+[submodule "home/.vim/bundle/python-mode"]
+	path = home/.vim/bundle/python-mode
+	url = git://github.com/klen/python-mode.git
