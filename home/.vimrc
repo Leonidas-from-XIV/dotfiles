@@ -113,32 +113,9 @@ filetype indent on
 filetype plugin on
 colorscheme solarized
 
-" highlight useless trailing whitespace
-"highlight trailingSpace ctermbg=Red
-" highlight it in all files
-"syntax match trailingSpace "\s\+$" display
-" highlight it in Python files (python.vim overrides the previous declaration)
-"autocmd FileType python syntax match trailingSpace "\s\+$" display
-
-
+" highlight unwanted spaces
 highlight UnwantedSpaces ctermbg=red guibg=red
 match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
-
-" improve recognition of Django templates
-"fun! s:SelectHTML()
-"  let n = 1
-"  while n < 50 && n < line("$")
-"    " check for django
-"    if getline(n) =~ '{%\s*\(extends\|block\|comment\|ssi\|if\|for\|blocktrans\)\>'
-"      set ft=htmldjango
-"      return
-"    endif
-"    let n = n + 1
-"  endwhile
-"  set ft=html
-"endfun
-
-"autocmd BufNewFile,BufRead *.html,*.htm  call s:SelectHTML()
 
 " Closetag plugin
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
@@ -152,9 +129,6 @@ let g:explHideFiles='^\.,.*\.sw[po]$,.*\.pyc$'
 
 " disable persistance in YankRing. I do not care about old ring contents
 let g:yankring_persist = 0
-
-" enable 256 colors (currently disabled as vim can request that from terminfo)
-"set t_Co=256
 
 " Tab and Shift-Tab indent and unindent in visual mode
 " (conflicts with snippetsEmu, unfortunately)
