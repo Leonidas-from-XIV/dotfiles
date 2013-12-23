@@ -1,0 +1,10 @@
+[ui]
+username = Marek Kubica <marek@xivilization.net>
+
+[diff]
+git = True
+
+[extensions]
+mq =
+rebase =
+color =
