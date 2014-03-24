@@ -53,3 +53,15 @@
 [submodule "home/.vim/bundle/python-mode"]
 	path = home/.vim/bundle/python-mode
 	url = git://github.com/klen/python-mode.git
+[submodule "home/.vim/bundle/addon-mw-utils"]
+	path = home/.vim/bundle/addon-mw-utils
+	url = git://github.com/marcweber/vim-addon-mw-utils.git
+[submodule "home/.vim/bundle/tlib"]
+	path = home/.vim/bundle/tlib
+	url = git://github.com/tomtom/tlib_vim.git
+[submodule "home/.vim/bundle/snippets"]
+	path = home/.vim/bundle/snippets
+	url = git://github.com/honza/vim-snippets.git
+[submodule "home/.vim/bundle/garbas-snipmate"]
+	path = home/.vim/bundle/snipmate
+	url = git://github.com/garbas/vim-snipmate.git
