@@ -64,6 +64,8 @@ let g:pymode_doc_key = '<leader>d'
 autocmd FileType python nmap <leader>g <esc>:RopeGotoDefinition<CR>
 " not super-useful because very slow but finds all occurences
 autocmd FileType python nmap <leader>f <esc>:RopeFindOccurrences<CR>
+" autocomplete, overrides usual SuperTab setting
+let g:pymode_rope_autocomplete_map = '<tab>'
 " I dislike line numbers but like the other python-mode options
 autocmd FileType python setlocal nonumber
 
