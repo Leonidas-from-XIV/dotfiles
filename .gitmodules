@@ -65,3 +65,6 @@
 [submodule "home/.vim/bundle/garbas-snipmate"]
 	path = home/.vim/bundle/snipmate
 	url = git://github.com/garbas/vim-snipmate.git
+[submodule "home/.vim/bundle/easymotion"]
+	path = home/.vim/bundle/easymotion
+	url = git://github.com/Lokaltog/vim-easymotion.git
