@@ -53,6 +53,7 @@
 [submodule "home/.vim/bundle/python-mode"]
 	path = home/.vim/bundle/python-mode
 	url = git://github.com/klen/python-mode.git
+	branch = origin/master
 [submodule "home/.vim/bundle/addon-mw-utils"]
 	path = home/.vim/bundle/addon-mw-utils
 	url = git://github.com/marcweber/vim-addon-mw-utils.git
