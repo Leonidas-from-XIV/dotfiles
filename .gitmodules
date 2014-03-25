@@ -84,3 +84,7 @@
 	path = home/.vim/bundle/unimpaired
 	url = git://github.com/tpope/vim-unimpaired.git
 	branch = master
+[submodule "home/.vim/bundle/surround"]
+	path = home/.vim/bundle/surround
+	url = git://github.com/tpope/vim-surround.git
+	branch = master
