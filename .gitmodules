@@ -60,14 +60,6 @@
 	path = home/.vim/bundle/python-mode
 	url = git://github.com/klen/python-mode.git
 	branch = master
-[submodule "home/.vim/bundle/addon-mw-utils"]
-	path = home/.vim/bundle/addon-mw-utils
-	url = git://github.com/marcweber/vim-addon-mw-utils.git
-	branch = master
-[submodule "home/.vim/bundle/tlib"]
-	path = home/.vim/bundle/tlib
-	url = git://github.com/tomtom/tlib_vim.git
-	branch = master
 [submodule "home/.vim/bundle/snippets"]
 	path = home/.vim/bundle/snippets
 	url = git://github.com/honza/vim-snippets.git
