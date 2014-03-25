@@ -1,8 +1,7 @@
 " .vimrc by Leonidas
 
 " enable the pathogen plugin so it can mangle paths and such
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+execute pathogen#infect()
 
 " deactivate vi compatibility, make usable
 set nocompatible
@@ -52,22 +51,22 @@ set nosmartindent
 " " deactivate it for hashes
 inoremap # #
 
-" pthon-mode uses folding but I don't like the fact that it is folded by
+" python-mode uses folding but I don't like the fact that it is folded by
 " default, so I immediately unfold it. Folding manually still works if
 " required
-autocmd FileType python silent! %foldopen!
+"autocmd FileType python silent! %foldopen!
+set foldlevelstart=20
 " Or just disable it
 "let g:pymode_folding = 0
 " Access the docs via ,d over an identifier
 let g:pymode_doc_key = '<leader>d'
 " goto definition of identifier with ,g
-autocmd FileType python nmap <leader>g <esc>:RopeGotoDefinition<CR>
-" not super-useful because very slow but finds all occurences
-autocmd FileType python nmap <leader>f <esc>:RopeFindOccurrences<CR>
+let g:pymode_rope_goto_definition_bind = '<leader>g'
 " autocomplete, overrides usual SuperTab setting
 let g:pymode_rope_autocomplete_map = '<tab>'
 " I dislike line numbers but like the other python-mode options
 autocmd FileType python setlocal nonumber
+"let g:pymode_options = 0
 
 " some useful settings for C
 autocmd FileType c setlocal shiftwidth=4 expandtab softtabstop=4
