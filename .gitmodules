@@ -88,3 +88,7 @@
 	path = home/.vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
 	branch = master
+[submodule "home/.vim/bundle/gundo"]
+	path = home/.vim/bundle/gundo
+	url = git://github.com/sjl/gundo.vim.git
+	branch = master
