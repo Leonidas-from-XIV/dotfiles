@@ -6,9 +6,6 @@
 	path = home/.vim/bundle/yankring
 	url = git://github.com/vim-scripts/YankRing.vim
 	branch = master
-[submodule "home/.vim/bundle/unimpaired"]
-	path = home/.vim/bundle/unimpaired
-	url = git://github.com/vim-scripts/unimpaired.vim.git
 [submodule "home/.vim/bundle/surround"]
 	path = home/.vim/bundle/surround
 	url = git://github.com/vim-scripts/surround.vim.git
