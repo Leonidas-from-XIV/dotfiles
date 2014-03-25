@@ -83,3 +83,7 @@
 	path = home/.vim/bundle/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
 	branch = master
+[submodule "home/.vim/bundle/unimpaired"]
+	path = home/.vim/bundle/unimpaired
+	url = git://github.com/tpope/vim-unimpaired.git
+	branch = master
