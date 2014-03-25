@@ -92,3 +92,7 @@
 	path = home/.vim/bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
 	branch = master
+[submodule "home/.vim/bundle/ctrlp"]
+	path = home/.vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
+	branch = master

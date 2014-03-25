@@ -2,6 +2,7 @@
 
 " enable the pathogen plugin so it can mangle paths and such
 execute pathogen#infect()
+execute pathogen#helptags()
 
 " deactivate vi compatibility, make usable
 set nocompatible
@@ -130,6 +131,8 @@ let g:explHideFiles='^\.,.*\.sw[po]$,.*\.pyc$'
 
 " disable persistance in YankRing. I do not care about old ring contents
 let g:yankring_persist = 0
+let g:yankring_replace_n_pkey = '<C-K>'
+let g:yankring_replace_n_nkey = '<C-J>'
 
 " Tab and Shift-Tab indent and unindent in visual mode
 " (conflicts with snippetsEmu, unfortunately)
