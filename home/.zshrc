@@ -62,8 +62,11 @@ setopt hist_reduce_blanks
 # don't store history commands
 setopt hist_no_store
 
-# disable ^ in EXTENDED_GLOB
-disable -p '^'
+autoload -U is-at-least
+if is-at-least 5.0.5; then
+	# disable ^ in EXTENDED_GLOB
+	disable -p '^'
+fi
 
 # magically quote urls when pasting
 autoload -U url-quote-magic
