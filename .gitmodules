@@ -1,6 +1,6 @@
 [submodule "home/.vim/bundle/supertab"]
 	path = home/.vim/bundle/supertab
-	url = git://github.com/vim-scripts/SuperTab-continued..git
+	url = git://github.com/ervandew/supertab.git
 	branch = master
 [submodule "home/.vim/bundle/yankring"]
 	path = home/.vim/bundle/yankring
@@ -72,10 +72,6 @@
 	path = home/.vim/bundle/snippets
 	url = git://github.com/honza/vim-snippets.git
 	branch = master
-[submodule "home/.vim/bundle/garbas-snipmate"]
-	path = home/.vim/bundle/snipmate
-	url = git://github.com/garbas/vim-snipmate.git
-	branch = master
 [submodule "home/.vim/bundle/easymotion"]
 	path = home/.vim/bundle/easymotion
 	url = git://github.com/Lokaltog/vim-easymotion.git
@@ -99,4 +95,8 @@
 [submodule "home/.vim/bundle/fugitive"]
 	path = home/.vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
+	branch = master
+[submodule "home/.vim/bundle/ultisnips"]
+	path = home/.vim/bundle/ultisnips
+	url = git://github.com/SirVer/ultisnips.git
 	branch = master
