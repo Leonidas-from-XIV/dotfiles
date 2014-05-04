@@ -99,6 +99,10 @@ alias nrepl='lein repl :start :port 33033'
 # gnome-terminal doing strange stuff
 bindkey "^[OH" beginning-of-line
 bindkey "^[OF" end-of-line
+# omg, gnome-terminal, why do you change these?
+# thanks to Ctrl-V special key to figure out what the BOL/EOL code du jour is.
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 # the normal bindings, just for reference
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
