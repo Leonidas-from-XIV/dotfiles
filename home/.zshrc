@@ -20,6 +20,12 @@ then
   (( $+commands[opam] )) && eval `opam config -env`
 fi
 
+CABAL_LOCATION=~/.cabal/bin
+if [ -d $CABAL_LOCATION ]
+then
+  PATH=$CABAL_LOCATION:$PATH
+fi
+
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
 
