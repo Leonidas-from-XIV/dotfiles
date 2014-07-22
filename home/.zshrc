@@ -6,6 +6,10 @@ prompt walters
 
 export EDITOR=vim
 
+# make words to be shell words (argv entries), ^W deletes whole arguments
+autoload -U select-word-style
+select-word-style shell
+
 # Fedora might have vimx, fix the mess
 if (( $+commands[vimx] ))
 then
