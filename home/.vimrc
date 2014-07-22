@@ -68,6 +68,7 @@ let g:pymode_rope_autocomplete_map = '<tab>'
 " I dislike line numbers but like the other python-mode options
 autocmd FileType python setlocal nonumber
 "let g:pymode_options = 0
+let g:pymode_lint_on_write = 0
 
 " some useful settings for C
 autocmd FileType c setlocal shiftwidth=4 expandtab softtabstop=4
