@@ -21,7 +21,7 @@ OPAM_LOCATION=~/ocaml/bin
 if [ -d $OPAM_LOCATION ]
 then
   PATH=$OPAM_LOCATION:$PATH
-  (( $+commands[opam] )) && eval `opam config -env`
+  (( $+commands[opam] )) && eval `opam config env`
 fi
 
 CABAL_LOCATION=~/.cabal/bin
