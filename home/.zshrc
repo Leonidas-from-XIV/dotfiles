@@ -17,12 +17,14 @@ then
   export EDITOR=vimx
 fi
 
+# check for local OPAM installation
 OPAM_LOCATION=~/ocaml/bin
 if [ -d $OPAM_LOCATION ]
 then
   PATH=$OPAM_LOCATION:$PATH
-  (( $+commands[opam] )) && eval `opam config env`
 fi
+# maybe OPAM is already installed globally
+(( $+commands[opam] )) && eval `opam config env`
 
 CABAL_LOCATION=~/.cabal/bin
 if [ -d $CABAL_LOCATION ]
