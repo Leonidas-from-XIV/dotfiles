@@ -127,6 +127,10 @@ bindkey "^[3;5~" delete-char
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
+# jump between words with ctrl-arrow
+bindkey "5D" backward-word
+bindkey "5C" forward-word
+
 # make ^Z in shell resume last suspended process
 #foreground-last() {
 #  fg %
