@@ -131,6 +131,10 @@ bindkey "^S" history-incremental-pattern-search-forward
 bindkey "5D" backward-word
 bindkey "5C" forward-word
 
+# search in history prefix with PgUp/PgDown
+[[ -n "${terminfo[kpp]}" ]] && bindkey "${terminfo[kpp]}" history-beginning-search-backward
+[[ -n "${terminfo[knp]}" ]] && bindkey "${terminfo[knp]}" history-beginning-search-forward
+
 # make ^Z in shell resume last suspended process
 #foreground-last() {
 #  fg %
