@@ -2,3 +2,6 @@
 	path = home/.rbenv
 	url = git://github.com/sstephenson/rbenv.git
 	branch = master
+[submodule "home/.vim/bundle/Vundle.vim"]
+	path = home/.vim/bundle/Vundle.vim
+	url = git@github.com:gmarik/Vundle.vim.git

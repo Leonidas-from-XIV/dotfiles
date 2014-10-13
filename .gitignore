@@ -7,3 +7,4 @@ tags
 *.kbx
 random_seed
 home/.gnupg/*
+home/.vim/bundle/*

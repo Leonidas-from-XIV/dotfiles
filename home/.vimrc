@@ -1,11 +1,53 @@
-" .vimrc by Leonidas
-
-" enable the pathogen plugin so it can mangle paths and such
-execute pathogen#infect()
-execute pathogen#helptags()
+" .vimrc by Marek Kubica <marek@xivilization.net>
+" You need to call :PluginInstall to get the required bundles
 
 " deactivate vi compatibility, make usable
 set nocompatible
+
+" Vundle setup dance
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'ervandew/supertab'
+Plugin 'Raimondi/delimitMate'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/Gundo'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'bling/vim-airline'
+Plugin 'vim-scripts/gitignore'
+Plugin 'vim-scripts/YankRing.vim'
+Bundle 'majutsushi/tagbar'
+
+" Permanent very magic mode
+Plugin 'coot/CRDispatcher'
+Plugin 'coot/EnchantedVim'
+
+" gist
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+
+" language bundles
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-fireplace'
+Plugin 'xhr/vim-io'
+Plugin 'Leonidas-from-XIV/vim-coffee-script'
+
+" git
+Plugin 'tpope/vim-fugitive'
+
+" looks
+Plugin 'vim-scripts/wombat256.vim'
+Plugin 'MnO2/vim-ocaml-conceal'
+Plugin 'enomsg/vim-haskellConcealPlus'
+
+call vundle#end()
+filetype plugin indent on
+" end of Vundle setup
 
 " show command line in normal mode
 set showcmd
@@ -13,7 +55,11 @@ set showcmd
 set showmatch
 " activate wildmenu - this is definitely useful for switching between files
 set wildmenu
-set wildignore=*.dll,*.o,*.pyc,*.pyo,*.bak,*.swp,*.exe,*.jpg,*.jpeg,*.png,*.gif
+" Tab-complete files up to longest unambiguous prefix
+set wildmode=list:longest,full
+
+" Set 7 lines to the cursor - when moving vertically using j/k
+set scrolloff=7
 
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 " needs +clipboard / +xterm_clipboard
@@ -29,6 +75,8 @@ set tabpagemax=100
 
 " I can't stand these stupid swapfiles, just disable them. they're not
 " helpful anyway
+set nobackup
+set nowritebackup
 set noswapfile
 
 " disable tear-off menus in gvim - rule of ugly!
@@ -52,23 +100,9 @@ set nosmartindent
 " " deactivate it for hashes
 inoremap # #
 
-" python-mode uses folding but I don't like the fact that it is folded by
-" default, so I immediately unfold it. Folding manually still works if
-" required
-"autocmd FileType python silent! %foldopen!
-set foldlevelstart=20
-" Or just disable it
-"let g:pymode_folding = 0
-" Access the docs via ,d over an identifier
-let g:pymode_doc_key = '<leader>d'
-" goto definition of identifier with ,g
-let g:pymode_rope_goto_definition_bind = '<leader>g'
-" autocomplete, overrides usual SuperTab setting
-let g:pymode_rope_autocomplete_map = '<tab>'
-" I dislike line numbers but like the other python-mode options
-autocmd FileType python setlocal nonumber
-"let g:pymode_options = 0
-let g:pymode_lint_on_write = 0
+" always display airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
 
 " some useful settings for C
 autocmd FileType c setlocal shiftwidth=4 expandtab softtabstop=4
@@ -91,19 +125,25 @@ autocmd FileType ocaml setlocal commentstring=(*%s*) shiftwidth=2
 autocmd FileType clojure let b:delimitMate_quotes = "\""
 
 " enable rainbow parens
-autocmd VimEnter * RainbowParenthesesToggleAll
-autocmd Syntax * RainbowParenthesesLoadRound
-autocmd Syntax * RainbowParenthesesLoadSquare
-autocmd Syntax * RainbowParenthesesLoadBraces
+"autocmd VimEnter * RainbowParenthesesToggleAll
+"autocmd Syntax * RainbowParenthesesLoadRound
+"autocmd Syntax * RainbowParenthesesLoadSquare
+"autocmd Syntax * RainbowParenthesesLoadBraces
 " Rainbow Parentheses renders level 10 parens usually ctermfg=black
 " but this is unreadable in Solarized theme. Override this particular setting
-autocmd VimEnter * highlight level10c ctermfg=darkcyan
+"autocmd VimEnter * highlight level10c ctermfg=darkcyan
 
 " fireplace alias: connect to locally running nREPL at 33033
 autocmd FileType clojure command! -buffer Repl Connect nrepl://localhost:33033
 
 " map ,g to Gist: '<,'>Gist
 vmap <leader>g <esc>:'<,'>Gist<CR>
+
+" ,u triggers Gundo view
+nmap <silent> <leader>u :GundoToggle<CR>
+
+" ,tt goes to tagbar
+map <leader>tt :TagbarToggle<CR>
 
 " comments
 set fo=croq
@@ -112,23 +152,11 @@ set fo=croq
 syntax enable
 set t_Co=256
 set background=dark
-filetype indent on
-filetype plugin on
-colorscheme solarized
+colorscheme wombat256mod
 
 " highlight unwanted spaces
-highlight UnwantedSpaces ctermbg=red guibg=red
-match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
-
-" Closetag plugin
-autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
-inoremap </ <C-R>=GetCloseTag()<CR>
-
-" file browser
-" hide some files
-let g:explHideFiles='^\.,.*\.sw[po]$,.*\.pyc$'
-"let g:explDetailedHelp=0
+"highlight UnwantedSpaces ctermbg=red guibg=red
+"match UnwantedSpaces /\s\+$\|\s\t\|\t\s/
 
 " disable persistance in YankRing. I do not care about old ring contents
 let g:yankring_persist = 0
@@ -144,7 +172,11 @@ let g:yankring_replace_n_nkey = '<C-J>'
 set lispwords+=parameterize
 
 " characters to use for :set list
-set listchars=tab:▸\ ,eol:¬
+set list
+" But only interesting whitespace
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
 
 " move through wrapped lines
 " http://vim.wikia.com/wiki/Move_through_wrapped_lines
