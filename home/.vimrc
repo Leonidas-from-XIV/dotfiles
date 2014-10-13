@@ -13,7 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'ervandew/supertab'
 Plugin 'Raimondi/delimitMate'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-scripts/Gundo'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
