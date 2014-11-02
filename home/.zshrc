@@ -128,8 +128,8 @@ bindkey "^R" history-incremental-pattern-search-backward
 bindkey "^S" history-incremental-pattern-search-forward
 
 # jump between words with ctrl-arrow
-bindkey "5D" backward-word
-bindkey "5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
 
 # search in history prefix with PgUp/PgDown
 [[ -n "${terminfo[kpp]}" ]] && bindkey "${terminfo[kpp]}" history-beginning-search-backward
