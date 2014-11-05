@@ -23,8 +23,8 @@ if [ -d $OPAM_LOCATION ]
 then
   PATH=$OPAM_LOCATION:$PATH
 fi
-# maybe OPAM is already installed globally
-(( $+commands[opam] )) && eval `opam config env`
+# if OPAM is installed, load it.
+. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 CABAL_LOCATION=~/.cabal/bin
 if [ -d $CABAL_LOCATION ]
