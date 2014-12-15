@@ -49,6 +49,15 @@ call vundle#end()
 filetype plugin indent on
 " end of Vundle setup
 
+" load Merlin if installed
+if executable("opam")
+  let s:opamshare = substitute(system('opam config var share'),'\n$','','''')
+  let s:merlinpath = s:opamshare . "/merlin/vim"
+  if isdirectory(s:merlinpath)
+    execute "set rtp+=" . s:merlinpath
+  endif
+endif
+
 " show command line in normal mode
 set showcmd
 " brace highlighting
@@ -117,9 +126,11 @@ autocmd FileType coffee vmap <leader>c <esc>:'<,'>CoffeeCompile<CR>
 
 autocmd FileType ruby setlocal shiftwidth=2 expandtab softtabstop=2
 
-" \\\ does comments courtesy of vim-commentary, but does not support OCaml
+" gc* does comments courtesy of vim-commentary, but does not support OCaml
 " OOTB, define this stuff
 autocmd FileType ocaml setlocal commentstring=(*%s*) shiftwidth=2
+autocmd FileType ocaml map <buffer> <leader>t :TypeOf<return>
+autocmd FileType ocaml vmap <buffer> <leader>t :TypeOfSel<return>
 
 " exclude single quotes from delimitMate in Clojure code
 autocmd FileType clojure let b:delimitMate_quotes = "\""
