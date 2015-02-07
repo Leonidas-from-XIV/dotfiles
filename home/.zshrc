@@ -192,6 +192,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # gentoo prompt theme
+
 prompt_gentoo_help () {
   cat <<'EOF'
 This prompt is color-scheme-able.  You can invoke it thus:
@@ -202,36 +203,24 @@ EOF
 }
 
 prompt_gentoo_setup () {
-  prompt_gentoo_prompt=${1:-'blue'}
-  prompt_gentoo_user=${2:-'green'}
-  prompt_gentoo_root=${3:-'red'}
+  local prompt_gentoo_prompt=${1:-'blue'}
+  local prompt_gentoo_user=${2:-'green'}
+  local prompt_gentoo_root=${3:-'red'}
 
   if [ "$USER" = 'root' ]
   then
-    base_prompt="%{$fg_bold[$prompt_gentoo_root]%}%m%{$reset_color%} "
+    local base_prompt="%B%F{$prompt_gentoo_root}%m%k "
   else
-    base_prompt="%{$fg_bold[$prompt_gentoo_user]%}%n@%m%{$reset_color%} "
+    local base_prompt="%B%F{$prompt_gentoo_user}%n@%m%k "
   fi
-  post_prompt="%{$reset_color%}"
+  local post_prompt="%b%f%k"
 
-  local color="%{*}"
-  base_prompt_no_color="${(S)base_prompt//${~color}/}"
-  post_prompt_no_color="${(S)post_prompt//${~color}/}"
+  #setopt noxtrace localoptions
 
-  setopt noxtrace localoptions
-  local base_prompt_expanded_no_color base_prompt_etc
-  local prompt_length space_left
-
-  base_prompt_expanded_no_color=$(print -P "$base_prompt_no_color")
-  base_prompt_etc=$(print -P "$base_prompt%(4~|...|)%3~")
-  prompt_length=${#base_prompt_etc}
-  path_prompt="%{$fg_bold[$prompt_gentoo_prompt]%}%1~"
-  PS1="$base_prompt$path_prompt %# $post_prompt"
-  PS2="$base_prompt$path_prompt %_> $post_prompt"
-  PS3="$base_prompt$path_prompt ?# $post_prompt"
-
-  precmd  () { }
-  preexec () { }
+  local path_prompt="%B%F{$prompt_gentoo_prompt}%1~"
+  typeset -g PS1="$base_prompt$path_prompt %# $post_prompt"
+  typeset -g PS2="$base_prompt$path_prompt %_> $post_prompt"
+  typeset -g PS3="$base_prompt$path_prompt ?# $post_prompt"
 }
 
 prompt_gentoo_setup "$@"
