@@ -34,6 +34,7 @@ Plugin 'mattn/gist-vim'
 " language bundles
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fireplace'
+Plugin 'vim-scripts/paredit.vim'
 Plugin 'xhr/vim-io'
 Plugin 'Leonidas-from-XIV/vim-coffee-script'
 
