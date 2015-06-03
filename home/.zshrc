@@ -17,6 +17,13 @@ then
   export EDITOR=vimx
 fi
 
+# anonymous function to be executed on start and avoid polluting namespace
+function () {
+  # colourful less by emulating less in vim
+  local VIMRUNTIME=`vim -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo $VIMRUNTIME|quit' | tr -d '\015' `
+  alias less=$VIMRUNTIME/macros/less.sh
+}
+
 # check for local OPAM installation
 OPAM_LOCATION=~/ocaml/bin
 if [ -d $OPAM_LOCATION ]
@@ -31,6 +38,20 @@ if [ -d $CABAL_LOCATION ]
 then
   PATH=$CABAL_LOCATION:$PATH
 fi
+
+# Fedora, https://bugzilla.redhat.com/show_bug.cgi?id=678934
+command_not_found_handler () {
+        local runcnf=1
+        local retval=127
+        [ ! -S /var/run/dbus/system_bus_socket ] && local runcnf=0
+        [ ! -x /usr/libexec/packagekitd ] && local runcnf=0
+        if [ $runcnf -eq 1 ]
+        then
+                /usr/libexec/pk-command-not-found $@
+                local retval=$?
+        fi
+        return $retval
+}
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e

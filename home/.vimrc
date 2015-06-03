@@ -146,9 +146,6 @@ autocmd FileType clojure let b:delimitMate_quotes = "\""
 " but this is unreadable in Solarized theme. Override this particular setting
 "autocmd VimEnter * highlight level10c ctermfg=darkcyan
 
-" fireplace alias: connect to locally running nREPL at 33033
-autocmd FileType clojure command! -buffer Repl Connect nrepl://localhost:33033
-
 " map ,g to Gist: '<,'>Gist
 vmap <leader>g <esc>:'<,'>Gist<CR>
 
