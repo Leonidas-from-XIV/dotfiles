@@ -25,5 +25,6 @@
 	insteadOf = github:
 [push]
 	default = simple
+	followTags = true
 [github]
 	user = Leonidas-from-XIV
