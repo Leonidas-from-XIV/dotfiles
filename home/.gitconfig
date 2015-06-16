@@ -24,7 +24,7 @@
 [url "git@github.com:Leonidas-from-XIV/"]
 	insteadOf = github:
 [push]
-	default = simple
+	default = current
 	followTags = true
 [github]
 	user = Leonidas-from-XIV
