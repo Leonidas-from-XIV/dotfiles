@@ -22,7 +22,7 @@
      emacs-lisp
      ;; (git :variables
      ;;      git-gutter-use-fringe t)
-     ;; markdown
+     markdown
      ;; org
      ;; shell
      ;; syntax-checking
