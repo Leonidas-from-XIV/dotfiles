@@ -150,8 +150,20 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  ; do not highlight the current line. I don't want underlining, EVER.
   (global-hl-line-mode -1)
+
+  ; arrows are consistent with my vim airline
   (setq powerline-default-separator 'arrow)
+
+  (defun silence ()
+    (interactive))
+
+  ; I hate when the cursor jumps when I click on the window, plz stahp
+  (define-key evil-motion-state-map [down-mouse-1] 'silence)
+  ; also avoid any '<mouse-1> is undefined' when setting to 'undefined
+  ; I know, it is deliberate
+  (define-key evil-motion-state-map [mouse-1] 'silence)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
