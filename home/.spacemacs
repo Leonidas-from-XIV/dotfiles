@@ -20,8 +20,8 @@
      ;; auto-completion
      ;; better-defaults
      emacs-lisp
-     ;; (git :variables
-     ;;      git-gutter-use-fringe t)
+     (git :variables
+          git-gutter-use-fringe t)
      markdown
      ;; org
      ;; shell
@@ -143,6 +143,7 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
+  (setq-default git-enable-github-support t)
   )
 
 (defun dotspacemacs/config ()
@@ -150,6 +151,7 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   (global-hl-line-mode -1)
+  (setq powerline-default-separator 'arrow)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
