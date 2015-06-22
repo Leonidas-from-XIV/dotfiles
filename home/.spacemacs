@@ -164,6 +164,9 @@ layers configuration."
   ; also avoid any '<mouse-1> is undefined' when setting to 'undefined
   ; I know, it is deliberate
   (define-key evil-motion-state-map [mouse-1] 'silence)
+
+  (evil-leader/set-key "o+" 'evil-numbers/inc-at-pt)
+  (evil-leader/set-key "o-" 'evil-numbers/dec-at-pt)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
