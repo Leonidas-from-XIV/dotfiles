@@ -167,6 +167,15 @@ layers configuration."
 
   (evil-leader/set-key "o+" 'evil-numbers/inc-at-pt)
   (evil-leader/set-key "o-" 'evil-numbers/dec-at-pt)
+
+  ;; exclude some useless files in helm
+  (setq helm-ff-skip-boring-files t)
+  ;; helm does not let you exclude . and .. so just exclude stuff that begins
+  ;; with a dot and continues with at least one non-dot
+  ;; first matches .*/ - there might be some path in front
+  ;; then \\. - the initial dot
+  ;; then [^\\.]+ - something that is not a dot, at least one time
+  (setq helm-boring-file-regexp-list '(".*/\\.[^\\.]+"))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
