@@ -176,6 +176,12 @@ layers configuration."
   ;; then \\. - the initial dot
   ;; then [^\\.]+ - something that is not a dot, at least one time
   (setq helm-boring-file-regexp-list '(".*/\\.[^\\.]+"))
+
+  ;; beloved window navigation shortcuts (they seem quite emacs-like)
+  (define-key evil-normal-state-map (kbd "C-w <left>") 'evil-window-left)
+  (define-key evil-normal-state-map (kbd "C-w <down>") 'evil-window-down)
+  (define-key evil-normal-state-map (kbd "C-w <up>") 'evil-window-up)
+  (define-key evil-normal-state-map (kbd "C-w <right>") 'evil-window-right)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
