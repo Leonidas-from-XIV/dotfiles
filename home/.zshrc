@@ -214,6 +214,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # gentoo prompt theme
 
+source ~/.zsh-git-prompt/zshrc.sh
+
 prompt_gentoo_help () {
   cat <<'EOF'
 This prompt is color-scheme-able.  You can invoke it thus:
@@ -238,10 +240,11 @@ prompt_gentoo_setup () {
 
   #setopt noxtrace localoptions
 
-  local path_prompt="%B%F{$prompt_gentoo_prompt}%1~"
+  local path_prompt="%B%F{$prompt_gentoo_prompt}%1~%f"
   typeset -g PS1="$base_prompt$path_prompt %# $post_prompt"
   typeset -g PS2="$base_prompt$path_prompt %_> $post_prompt"
   typeset -g PS3="$base_prompt$path_prompt ?# $post_prompt"
+  PROMPT=$base_prompt$path_prompt"%b"'$(git_super_status)'"%B%F{$prompt_gentoo_prompt} %# "$post_prompt
 }
 
 prompt_gentoo_setup "$@"
