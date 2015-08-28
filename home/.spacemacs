@@ -20,13 +20,16 @@
      ;; auto-completion
      ;; better-defaults
      emacs-lisp
-     (git :variables
-          git-gutter-use-fringe t)
+     git
+     github
+     version-control
      markdown
      ;; org
      ;; shell
      ;; syntax-checking
      clojure
+     eyebrowse
+     erlang
      )
    ;; List of additional packages that will be installed wihout being
    ;; wrapped in a layer. If you need some configuration for these
@@ -143,7 +146,6 @@ before layers configuration."
    dotspacemacs-default-package-repository nil
    )
   ;; User initialization goes here
-  (setq-default git-enable-github-support t)
   )
 
 (defun dotspacemacs/config ()
