@@ -184,6 +184,9 @@ layers configuration."
   (define-key evil-normal-state-map (kbd "C-w <down>") 'evil-window-down)
   (define-key evil-normal-state-map (kbd "C-w <up>") 'evil-window-up)
   (define-key evil-normal-state-map (kbd "C-w <right>") 'evil-window-right)
+
+  ;; default filters for CIDER stacktraces
+  (setq cider-stacktrace-default-filters '(java tooling dup))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
