@@ -23,6 +23,8 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	lgtm = -c core.editor=true merge --no-ff
 	squash = rebase --autosquash -i
+	fixup = commit -a --fixup HEAD
+	patdiff = difftool -y -x patdiff
 [url "git@github.com:Leonidas-from-XIV/"]
 	insteadOf = github:
 [push]
@@ -30,3 +32,5 @@
 	followTags = true
 [github]
 	user = Leonidas-from-XIV
+[rebase]
+	autoSquash = true
