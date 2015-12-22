@@ -17,13 +17,6 @@ then
   export EDITOR=vimx
 fi
 
-# anonymous function to be executed on start and avoid polluting namespace
-function () {
-  # colourful less by emulating less in vim
-  local VIMRUNTIME=`vim -e -T dumb --cmd 'exe "set t_cm=\<C-M>"|echo $VIMRUNTIME|quit' | tr -d '\015' `
-  alias less=$VIMRUNTIME/macros/less.sh
-}
-
 # check for local OPAM installation
 OPAM_LOCATION=~/ocaml/bin
 if [ -d $OPAM_LOCATION ]
