@@ -187,6 +187,7 @@ layers configuration."
 
   ;; default filters for CIDER stacktraces
   (setq cider-stacktrace-default-filters '(java tooling dup))
+  (add-hook 'clojure-mode-hook #'spacemacs/toggle-aggressive-indent-on)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
