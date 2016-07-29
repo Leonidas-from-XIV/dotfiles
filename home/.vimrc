@@ -19,7 +19,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
-Plugin 'vim-scripts/gitignore'
+Plugin 'duk3luk3/gitignore'
 Plugin 'vim-scripts/YankRing.vim'
 Bundle 'majutsushi/tagbar'
 
