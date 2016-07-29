@@ -25,6 +25,7 @@
 	squash = rebase --autosquash -i
 	fixup = commit -a --fixup HEAD
 	patdiff = difftool -y -x patdiff
+	remaster = fetch origin master:master
 [url "git@github.com:Leonidas-from-XIV/"]
 	insteadOf = github:
 [push]
