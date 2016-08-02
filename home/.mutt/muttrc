@@ -1,0 +1,37 @@
+source "~/.mutt/mutt-gnome-keyring-password.py smtp.1.exchange.1and1.eu |"
+
+set sort=threads
+set timeout=10
+set alias_file=~/.mutt/aliases
+set sort_alias=alias
+set reverse_alias=yes
+source $alias_file
+
+# IMAP: offlineimap
+set folder = "~/Maildir"
+source ~/.mutt/mailboxes
+set spoolfile = "+INBOX"
+set record = "+Sent\ Items"
+set postponed = "+Drafts"
+
+# https://wiki.archlinux.org/index.php/Mutt#Native_SMTP_support
+
+set realname = 'Marek Kubica'
+set from = marek.kubica@stylefruits.de
+set use_from = yes
+
+set smtp_url=smtps://marek.kubica@stylefruits.de:$smtp_pass@smtp.1.exchange.1and1.eu
+set ssl_starttls = yes
+
+set sidebar_visible = no
+set sidebar_short_path
+set sidebar_delim_chars = "/"
+bind index,pager B sidebar-toggle-visible
+
+# HTML mail
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+# notmuch
+set nm_default_uri = "notmuch:///home/marek/Maildir"
+virtual-mailboxes "INBOX" "notmuch://?query=tag:inbox"

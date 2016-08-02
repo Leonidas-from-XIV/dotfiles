@@ -1,0 +1,37 @@
+[general]
+accounts = sf
+pythonfile = ~/.mutt/offlineimap.py
+
+[Account sf]
+# Identifier for the local repository; e.g. the maildir to be synced via IMAP.
+localrepository = sf-local
+# Identifier for the remote repository; i.e. the actual IMAP, usually non-local.
+remoterepository = sf-remote
+# Status cache. Default is plain, which eventually becomes huge and slow.
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository sf-local]
+# Currently, offlineimap only supports maildir and IMAP for local repositories.
+type = Maildir
+# Where should the mail be placed?
+localfolders = ~/Maildir
+
+[Repository sf-remote]
+# Remote repos can be IMAP or Gmail, the latter being a preconfigured IMAP.
+type = IMAP
+remotehost = mail.1.exchange.1and1.eu
+remoteusereval = get_username("sf-remote")
+remotepasseval = get_password("sf-remote")
+auth_mechanisms = PLAIN, LOGIN
+ssl = yes
+cert_fingerprint = a70de63f02df2fc7970e810d7e306af1fa154a14
+folderfilter = lambda name: name not in ["Calendar", "Deleted Items"]
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
