@@ -21,7 +21,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bling/vim-airline'
 Plugin 'duk3luk3/gitignore'
 Plugin 'vim-scripts/YankRing.vim'
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 
 " Permanent very magic mode
 Plugin 'coot/CRDispatcher'
