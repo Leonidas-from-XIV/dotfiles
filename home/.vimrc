@@ -38,6 +38,7 @@ Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'xhr/vim-io'
 Plugin 'Leonidas-from-XIV/vim-coffee-script'
+Plugin 'ElmCast/elm-vim'
 
 " git
 Plugin 'tpope/vim-fugitive'
