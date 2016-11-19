@@ -5,6 +5,7 @@ tags
 *.gpg~
 *.gpg.lock
 *.kbx
+*.pyc
 random_seed
 home/.gnupg/*
 home/.vim/bundle/*
