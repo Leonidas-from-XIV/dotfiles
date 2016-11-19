@@ -143,6 +143,8 @@ autocmd FileType ocaml vmap <buffer> <leader>t :MerlinTypeOfSel<return>
 " exclude single quotes from delimitMate in Clojure code
 autocmd FileType clojure let b:delimitMate_quotes = "\""
 
+autocmd BufRead,BufNewFile *.sexp setfiletype cl
+
 " enable rainbow parens
 "autocmd VimEnter * RainbowParenthesesToggleAll
 "autocmd Syntax * RainbowParenthesesLoadRound
