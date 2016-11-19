@@ -12,6 +12,8 @@
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     html
+     sql
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -28,7 +30,6 @@
      ;; shell
      ;; syntax-checking
      clojure
-     eyebrowse
      erlang
      )
    ;; List of additional packages that will be installed wihout being
@@ -188,7 +189,29 @@ layers configuration."
   ;; default filters for CIDER stacktraces
   (setq cider-stacktrace-default-filters '(java tooling dup))
   (add-hook 'clojure-mode-hook #'spacemacs/toggle-aggressive-indent-on)
+  ;; indentation adjustments
+  (add-hook 'clojure-mode-hook (lambda ()
+                                 (define-clojure-indent
+                                            (import-loaders 0)
+                                            (import-sources 0)
+                                            (try+ 0)
+                                            (catching-404 0)
+                                            (unique-for 0))))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode sql-indent uuidgen toc-org org-plus-contrib org-bullets link-hint hide-comnt github-search evil-visual-mark-mode evil-unimpaired evil-ediff dumb-jump f column-enforce-mode marshal ht request gitignore-mode fringe-helper git-gutter+ flx git-commit with-editor peg eval-sexp-fu spinner epl packed bind-map spacemacs-theme spaceline powerline persp-mode page-break-lines neotree magit-gitflow leuven-theme info+ highlight-numbers helm-swoop helm-projectile helm-ag github-clone gitconfig-mode eyebrowse evil-mc evil-matchit evil-magit erlang diff-hl clj-refactor multiple-cursors paredit yasnippet cider clojure-mode buffer-move avy anzu iedit smartparens highlight git-gutter projectile helm popup helm-core gh pcache markdown-mode s magit magit-popup async dash hydra package-build use-package which-key evil ws-butler window-numbering volatile-highlights vi-tilde-fringe undo-tree smooth-scrolling smeargle restart-emacs rainbow-delimiters queue quelpa popwin pkg-info pcre2el parent-mode paradox orgit open-junk-file move-text mmm-mode markdown-toc magit-gh-pulls macrostep lorem-ipsum logito linum-relative inflections indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-indentation help-fns+ helm-themes helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds goto-chg google-translate golden-ratio github-browse-file gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu elisp-slime-nav edn diminish define-word clean-aindent-mode cider-eval-sexp-fu bracketed-paste bind-key auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
