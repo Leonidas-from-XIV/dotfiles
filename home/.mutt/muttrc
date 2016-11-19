@@ -20,8 +20,9 @@ set realname = 'Marek Kubica'
 set from = marek.kubica@stylefruits.de
 set use_from = yes
 
-set smtp_url=smtps://marek.kubica@stylefruits.de:$smtp_pass@smtp.1.exchange.1and1.eu
+set smtp_url=smtp://marek.kubica@stylefruits.de:$imap_pass@smtp.1.exchange.1and1.eu:587
 set ssl_starttls = yes
+set smtp_authenticators = 'login'
 
 set sidebar_visible = no
 set sidebar_short_path
@@ -32,6 +33,11 @@ bind index,pager B sidebar-toggle-visible
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 
+# flowed
+set text_flowed = yes
+
 # notmuch
 set nm_default_uri = "notmuch:///home/marek/Maildir"
-virtual-mailboxes "INBOX" "notmuch://?query=tag:inbox"
+virtual-mailboxes "INBOX" "notmuch://?query=tag:inbox" \
+                  "Clojure" "notmuch://?query=tag:clojure"
+set virtual_spoolfile = yes

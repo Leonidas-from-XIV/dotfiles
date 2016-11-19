@@ -189,6 +189,12 @@ if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 endif
 
+" for editing email written with mutt
+augroup filetypedetect
+  " Mail
+  autocmd BufRead,BufNewFile *mutt-* setfiletype mail setlocal fo+=aw
+augroup END
+
 " move through wrapped lines
 " http://vim.wikia.com/wiki/Move_through_wrapped_lines
 imap <silent> <Down> <C-o>gj

@@ -9,7 +9,7 @@ localrepository = sf-local
 remoterepository = sf-remote
 # Status cache. Default is plain, which eventually becomes huge and slow.
 status_backend = sqlite
-postsynchook = notmuch new
+postsynchook = ionice -c 3 chrt --idle 0 /bin/sh -c "notmuch new && ~/.mutt/tag.sh"
 
 [Repository sf-local]
 # Currently, offlineimap only supports maildir and IMAP for local repositories.
