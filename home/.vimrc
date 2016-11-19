@@ -52,12 +52,17 @@ call vundle#end()
 filetype plugin indent on
 " end of Vundle setup
 
-" load Merlin if installed
+" load Merlin & ocp-indent if installed
 if executable("opam")
   let s:opamshare = substitute(system('opam config var share'),'\n$','','''')
   let s:merlinpath = s:opamshare . "/merlin/vim"
   if isdirectory(s:merlinpath)
     execute "set rtp+=" . s:merlinpath
+  endif
+  let s:ocpindentpath = s:opamshare . "/ocp-indent/vim"
+  if isdirectory(s:ocpindentpath)
+    execute "set rtp+=" . s:ocpindentpath
+    " set rtp^=s:ocpindentpath
   endif
 endif
 
