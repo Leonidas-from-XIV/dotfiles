@@ -17,6 +17,34 @@ then
   export EDITOR=vimx
 fi
 
+# make PATH entries unique by forcing path array to be unique
+typeset -U path
+
+# macOS
+if [[ -d /usr/local/bin ]]
+then
+  path[1,0]=/usr/local/bin
+fi
+
+if (( $+commands[brew] && $+commands[jq] ))
+then
+  path[1,0]=/usr/local/opt/coreutils/libexec/gnubin
+
+  # script to cache the output of a command for a certain duration
+  # brew is slow, so cache its output
+  cacheme=""
+  if [[ -e "${HOME}/.cacheme" ]]
+  then
+	  cacheme="${HOME}/.cacheme"
+  fi
+
+  kegs=("${(@f)$(${cacheme} brew info --json=v1 --installed | jq -r 'map(select(.keg_only == true) | .name) | .[]')}")
+  for keg in $kegs; do
+    kegpath=/usr/local/opt/$keg/bin
+    path[1,0]=($kegpath)
+  done
+fi
+
 # check for local OPAM installation
 OPAM_LOCATION=~/ocaml/bin
 if [ -d $OPAM_LOCATION ]
