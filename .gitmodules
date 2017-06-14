@@ -8,3 +8,6 @@
 [submodule "home/.zsh-git-prompt"]
 	path = home/.zsh-git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt.git
+[submodule "home/.nvim/vim-plug"]
+	path = home/.nvim/vim-plug
+	url = https://github.com/junegunn/vim-plug.git
