@@ -39,3 +39,7 @@
 	compactionHeuristic = true
 [fetch]
 	prune = true
+[includeIf "gitdir:~/ufst/"]
+	path = .gitconfig-ufst
+[pull]
+	ff = only
