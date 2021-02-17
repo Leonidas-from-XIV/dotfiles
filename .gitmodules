@@ -2,9 +2,6 @@
 	path = home/.rbenv
 	url = https://github.com/sstephenson/rbenv.git
 	branch = master
-[submodule "home/.vim/bundle/Vundle.vim"]
-	path = home/.vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "home/.zsh-git-prompt"]
 	path = home/.zsh-git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt.git
