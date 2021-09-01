@@ -43,3 +43,5 @@
 	path = .gitconfig-ufst
 [pull]
 	ff = only
+[mergetool "vimdiff"]
+	cmd = nvim -d $LOCAL $REMOTE $MERGED -c 'wincmd w' -c 'wincmd J'
