@@ -47,17 +47,6 @@ Plug 'vim-airline/vim-airline'
 " ocaml
 Plug 'ocaml/vim-ocaml', {'for': 'ocaml'}
 
-" clojure
-Plug 'Olical/conjure', {'tag': 'v4.14.0', 'for': 'clojure'}
-Plug 'Olical/AnsiEsc'
-Plug 'guns/vim-sexp', {'for': 'clojure'}
-Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
-Plug 'luochen1990/rainbow'
-
-" align
-" mostly for clojure
-Plug 'junegunn/vim-easy-align', {'for': 'clojure'}
-
 " memento mori
 Plug 'Leonidas-from-XIV/memento-mori.nvim'
 call plug#end()
@@ -82,11 +71,6 @@ vmap > >gv
 "let maplocalleader=" "
 let maplocalleader=","
 
-let g:sexp_enable_insert_mode_mappings = 0
-
-" enable rainbow parens
-let g:rainbow_active = 1
-
 " automatically exit insert mode after inactivity
 au CursorHoldI * stopinsert
 au InsertEnter * let updaterestore=&updatetime | set updatetime=4000
@@ -101,7 +85,7 @@ vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
 " copy to clipboard
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 " fzf
 " don't open files multiple times
@@ -128,34 +112,18 @@ let g:airline_section_y = '%-0.5{MementoMori()}'
 let g:memento_mori_birthdate = '1988-08-07'
 
 " load Merlin & ocp-indent if installed
-if executable("opam")
-  let s:opamshare = substitute(system('opam config var share'),'\n$','','''')
-  let s:merlinpath = s:opamshare . "/merlin/vim"
-  if isdirectory(s:merlinpath)
-    execute "set rtp+=" . s:merlinpath
-  endif
-  let s:ocpindentpath = s:opamshare . "/ocp-indent/vim"
-  if isdirectory(s:ocpindentpath)
-    execute "set rtp+=" . s:ocpindentpath
-    " set rtp^=s:ocpindentpath
-  endif
-endif
-
-" ALE
-" function! LinterStatus() abort
-"     let l:counts = ale#statusline#Count(bufnr(''))
-
-"     let l:all_errors = l:counts.error + l:counts.style_error
-"     let l:all_non_errors = l:counts.total - l:all_errors
-
-"     return l:counts.total == 0 ? 'OK' : printf(
-"     \   '%dW %dE',
-"     \   all_non_errors,
-"     \   all_errors
-"     \)
-" endfunction
-
-" set statusline=%{LinterStatus()}
+" if executable("opam")
+"   let s:opamshare = substitute(system('opam config var share'),'\n$','','''')
+"   let s:merlinpath = s:opamshare . "/merlin/vim"
+"   if isdirectory(s:merlinpath)
+"     execute "set rtp+=" . s:merlinpath
+"   endif
+"   let s:ocpindentpath = s:opamshare . "/ocp-indent/vim"
+"   if isdirectory(s:ocpindentpath)
+"     execute "set rtp+=" . s:ocpindentpath
+"     " set rtp^=s:ocpindentpath
+"   endif
+" endif
 
 " Filetype customizations
 
@@ -165,20 +133,12 @@ autocmd FileType ocaml setlocal commentstring=(*%s*) shiftwidth=2
 autocmd FileType ocaml map <buffer> <leader>t :MerlinTypeOf<return>
 autocmd FileType ocaml vmap <buffer> <leader>t :MerlinTypeOfSel<return>
 
-" enable easy align
-autocmd FileType clojure nmap ga <Plug>(EasyAlign)
-autocmd FileType clojure xmap ga <Plug>(EasyAlign)
-" auto alignment for [] and {} in Clojure forms
-"autocmd FileType clojure map <buffer> <leader>] vi[ga-<Space><return>
-"autocmd FileType clojure map <buffer> <leader>} vi{ga-<Space><return>
-autocmd FileType clojure nmap <buffer> <leader>] vi[<c-v>$:EasyAlign\ g/^\S/<cr>gv=
-autocmd FileType clojure nmap <buffer> <leader>} vi{<c-v>$:EasyAlign\ g/^\S/<cr>gv=
-
 " more useful general settings when working with Clojure
-autocmd FileType clojure set number nowrap sidescrolloff=999
+autocmd FileType clojure set number nowrap sidescrolloff=7
 
-" https://github.com/Olical/conjure/wiki/Displaying-ANSI-escape-code-colours-in-the-log-buffer
-autocmd BufEnter conjure-log-* AnsiEsc
+" check when file changes externally
+set autoread
+autocmd FocusGained,BufEnter * :checktime
 
 " FZF
 let g:fzf_buffers_jump = 1
