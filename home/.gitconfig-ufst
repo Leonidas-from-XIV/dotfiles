@@ -1,4 +1,0 @@
-[user]
-	email = marek.kubica@ufst.dk
-[alias]
-	redevelop = fetch origin develop:develop
