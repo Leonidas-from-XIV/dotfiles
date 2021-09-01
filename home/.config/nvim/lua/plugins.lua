@@ -68,7 +68,7 @@ return require('packer').startup(function()
       theme = 'powerline'
     },
     sections = {
-      lualine_y = {'MementoMori'}
+      lualine_y = {require('memento-mori').memento_mori}
     }
   })
 end)

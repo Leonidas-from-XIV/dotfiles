@@ -38,19 +38,11 @@ vmap <C-Down> ]egv
 " copy to clipboard
 "set clipboard=unnamedplus
 
-" always display airline
-set laststatus=2
-let g:airline_powerline_fonts = 1
-
 " easymotion
 " bidirectional \\w
 " nmap <Leader><Leader>w <Plug>(easymotion-bd-w)
 " bidirectional \\w over multiple windows
 nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
-
-" Display memento mori info in airline
-" let g:airline_section_y = '%-0.5{MementoMori()}'
-" let g:memento_mori_birthdate = '1988-08-07'
 
 " load Merlin & ocp-indent if installed
 " if executable("opam")
