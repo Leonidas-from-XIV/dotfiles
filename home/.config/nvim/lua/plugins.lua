@@ -63,6 +63,18 @@ return require('packer').startup(function()
       end
   }
 
+  -- TODO: fix to make this work, somehow
+  use {
+    "folke/which-key.nvim",
+    config = function()
+        require("which-key").setup {}
+      end
+  }
+
+  -- LSP stuff
+  use 'neovim/nvim-lspconfig'
+  use 'glepnir/lspsaga.nvim'
+
   require('lualine').setup({
     options = {
       theme = 'powerline'
@@ -72,4 +84,3 @@ return require('packer').startup(function()
     }
   })
 end)
-

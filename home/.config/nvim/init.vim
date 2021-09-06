@@ -44,26 +44,12 @@ vmap <C-Down> ]egv
 " bidirectional \\w over multiple windows
 nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 
-" load Merlin & ocp-indent if installed
-" if executable("opam")
-"   let s:opamshare = substitute(system('opam config var share'),'\n$','','''')
-"   let s:merlinpath = s:opamshare . "/merlin/vim"
-"   if isdirectory(s:merlinpath)
-"     execute "set rtp+=" . s:merlinpath
-"   endif
-"   let s:ocpindentpath = s:opamshare . "/ocp-indent/vim"
-"   if isdirectory(s:ocpindentpath)
-"     execute "set rtp+=" . s:ocpindentpath
-"     " set rtp^=s:ocpindentpath
-"   endif
-" endif
-
 " Filetype customizations
 
 " gc* does comments courtesy of vim-commentary, but does not support OCaml
 " OOTB, define this stuff
 autocmd FileType ocaml setlocal commentstring=(*%s*) shiftwidth=2
-autocmd FileType ocaml map <buffer> <leader>t :MerlinTypeOf<return>
+" autocmd FileType ocaml map <buffer> <leader>t :MerlinTypeOf<return>
 autocmd FileType ocaml vmap <buffer> <leader>t :MerlinTypeOfSel<return>
 
 " more useful general settings when working with Clojure
@@ -75,3 +61,13 @@ autocmd FocusGained,BufEnter * :checktime
 
 " Telescope
 nnoremap <C-p> :Telescope git_files<CR>
+
+" LSP
+lua require'lspconfig'.ocamllsp.setup{}
+autocmd FileType ocaml map <buffer> <leader>s <Cmd>Lspsaga signature_help<return>
+autocmd FileType ocaml map <buffer> <leader>t <Cmd>Lspsaga hover_doc<return>
+autocmd FileType ocaml map <buffer> <leader>d <Cmd>lua vim.lsp.buf.definition()<return>
+autocmd FileType ocaml map <buffer> <leader>r <Cmd>Lspsaga rename<return>
+
+" my GitHub username is long so whenever I need to refer to it I'll be lazy
+iabbrev Leon Leonidas-from-XIV
