@@ -55,6 +55,8 @@ return require('packer').startup(function()
     ft = {'ocaml'}
   }
 
+  use 'tpope/vim-markdown'
+
   -- memento mori
   use {
     'Leonidas-from-XIV/memento-mori.nvim',
@@ -73,7 +75,8 @@ return require('packer').startup(function()
 
   -- LSP stuff
   use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
+  -- use 'glepnir/lspsaga.nvim'
+  use 'tami5/lspsaga.nvim'
 
   require('lualine').setup({
     options = {
