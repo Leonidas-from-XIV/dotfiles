@@ -75,8 +75,18 @@ return require('packer').startup(function()
 
   -- LSP stuff
   use 'neovim/nvim-lspconfig'
-  -- use 'glepnir/lspsaga.nvim'
-  use 'tami5/lspsaga.nvim'
+  use {
+    'tami5/lspsaga.nvim',
+    branch = 'nvim51'
+  }
+  use {
+    'RishabhRD/lspactions',
+    requires = { {'nvim-lua/plenary.nvim'}, {'nvim-lua/popup.nvim'}, {'tjdevries/astronauta.nvim'} }
+  }
+  use 'ray-x/lsp_signature.nvim'
+
+  -- completion
+  use 'hrsh7th/nvim-cmp'
 
   require('lualine').setup({
     options = {

@@ -67,7 +67,7 @@ lua require'lspconfig'.ocamllsp.setup{}
 autocmd FileType ocaml map <buffer> <leader>s <Cmd>Lspsaga signature_help<return>
 autocmd FileType ocaml map <buffer> <leader>t <Cmd>Lspsaga hover_doc<return>
 autocmd FileType ocaml map <buffer> <leader>d <Cmd>lua vim.lsp.buf.definition()<return>
-autocmd FileType ocaml map <buffer> <leader>r <Cmd>Lspsaga rename<return>
+autocmd FileType ocaml map <buffer> <leader>r <Cmd>lua require'lspactions'.rename()<return>
 
 " my GitHub username is long so whenever I need to refer to it I'll be lazy
 iabbrev Leon Leonidas-from-XIV
