@@ -21,7 +21,13 @@ return require('packer').startup(function()
   }
 
   -- motion
-  use 'easymotion/vim-easymotion'
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v1', -- optional but strongly recommended
+    config = function()
+      require'hop'.setup()
+    end
+  }
 
   -- make
   use 'neomake/neomake'

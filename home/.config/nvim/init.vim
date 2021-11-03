@@ -38,11 +38,8 @@ vmap <C-Down> ]egv
 " copy to clipboard
 "set clipboard=unnamedplus
 
-" easymotion
-" bidirectional \\w
-" nmap <Leader><Leader>w <Plug>(easymotion-bd-w)
-" bidirectional \\w over multiple windows
-nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
+" hop
+nmap <Leader><Leader>w :HopWord<return>
 
 " Filetype customizations
 
